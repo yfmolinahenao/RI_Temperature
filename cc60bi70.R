@@ -1,4 +1,3 @@
-setwd("~/Desktop/YFMH/BIOMOD2/")
 library(biomod2)
 library(raster)
 library(ggplot2) 
