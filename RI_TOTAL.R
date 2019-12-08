@@ -1,5 +1,3 @@
-setwd("~/Desktop/YFMH")
-
 #####Germination#####
 data <- read.csv(file="TEMPERATURE_EXPERIMENT_2.csv", stringsAsFactors = FALSE, na.strings = c("NA", ""))
 
@@ -160,85 +158,6 @@ for (i in 1:10000) {
   
 }
 
-#####Flowering#####
-#data = data[data$Survival=="1",]
-#
-#flower_CC9  = data[data$Temperature=="9"  & data$Cross_Region=="CARXCAR", 18]
-#flower_CP9  = data[data$Temperature=="9"  & data$Cross_Region=="CARXPAN", 18]
-#flower_PC9  = data[data$Temperature=="9"  & data$Cross_Region=="PANXCAR", 18]
-#flower_PP9  = data[data$Temperature=="9"  & data$Cross_Region=="PANXPAN", 18]
-#
-#flower_CC14 = data[data$Temperature=="14" & data$Cross_Region=="CARXCAR", 18]
-#flower_CP14 = data[data$Temperature=="14" & data$Cross_Region=="CARXPAN", 18]
-#flower_PC14 = data[data$Temperature=="14" & data$Cross_Region=="PANXCAR", 18]
-#flower_PP14 = data[data$Temperature=="14" & data$Cross_Region=="PANXPAN", 18]
-#
-#flower_CC19 = data[data$Temperature=="19" & data$Cross_Region=="CARXCAR", 18]
-#flower_CP19 = data[data$Temperature=="19" & data$Cross_Region=="CARXPAN", 18]
-#flower_PC19 = data[data$Temperature=="19" & data$Cross_Region=="PANXCAR", 18]
-#flower_PP19 = data[data$Temperature=="19" & data$Cross_Region=="PANXPAN", 18]
-#
-#flower_CC24 = data[data$Temperature=="24" & data$Cross_Region=="CARXCAR", 18]
-#flower_CP24 = data[data$Temperature=="24" & data$Cross_Region=="CARXPAN", 18]
-#flower_PC24 = data[data$Temperature=="24" & data$Cross_Region=="PANXCAR", 18]
-#flower_PP24 = data[data$Temperature=="24" & data$Cross_Region=="PANXPAN", 18]
-#
-###Bootstrap CIs##
-#set.seed(1)
-#Pre_Iflower_P2C9  = vector()
-#Pre_Iflower_C2P9  = vector()
-#Pre_Iflower_P2C14 = vector()
-#Pre_Iflower_C2P14 = vector()
-#Pre_Iflower_P2C19 = vector()
-#Pre_Iflower_C2P19 = vector()
-#Pre_Iflower_P2C24 = vector()
-#Pre_Iflower_C2P24 = vector()
-#Pos_Iflower_P2C9  = vector()
-#Pos_Iflower_C2P9  = vector()
-#Pos_Iflower_P2C14 = vector()
-#Pos_Iflower_C2P14 = vector()
-#Pos_Iflower_P2C19 = vector()
-#Pos_Iflower_C2P19 = vector()
-#Pos_Iflower_P2C24 = vector()
-#Pos_Iflower_C2P24 = vector()
-#
-#
-#for (i in 1:10000) {
-#  Rflower_CC9 = sum(sample(flower_CC9 , 100, replace = T))
-#  Rflower_CP9 = sum(sample(flower_CP9 , 100, replace = T))
-#  Rflower_PC9 = sum(sample(flower_PC9 , 100, replace = T))
-#  Rflower_PP9 = sum(sample(flower_PP9 , 100, replace = T))
-#  Rflower_CC14= sum(sample(flower_CC14, 100, replace = T))
-#  Rflower_CP14= sum(sample(flower_CP14, 100, replace = T))
-#  Rflower_PC14= sum(sample(flower_PC14, 100, replace = T))
-#  Rflower_PP14= sum(sample(flower_PP14, 100, replace = T))
-#  Rflower_CC19= sum(sample(flower_CC19, 100, replace = T))
-#  Rflower_CP19= sum(sample(flower_CP19, 100, replace = T))
-#  Rflower_PC19= sum(sample(flower_PC19, 100, replace = T))
-#  Rflower_PP19= sum(sample(flower_PP19, 100, replace = T))
-#  Rflower_CC24= sum(sample(flower_CC24, 100, replace = T))
-#  Rflower_CP24= sum(sample(flower_CP24, 100, replace = T))
-#  Rflower_PC24= sum(sample(flower_PC24, 100, replace = T))
-#  Rflower_PP24= sum(sample(flower_PP24, 100, replace = T))
-#  
-#  Pre_Iflower_P2C9  = c(Pre_Iflower_P2C9  , 1-2*Rflower_PP9/(Rflower_CC9+Rflower_PP9))
-#  Pre_Iflower_C2P9  = c(Pre_Iflower_C2P9  , 1-2*Rflower_CC9/(Rflower_PP9+Rflower_CC9))
-#  Pre_Iflower_P2C14 = c(Pre_Iflower_P2C14 , 1-2*Rflower_PP14/(Rflower_CC14+Rflower_PP14))
-#  Pre_Iflower_C2P14 = c(Pre_Iflower_C2P14 , 1-2*Rflower_CC14/(Rflower_PP14+Rflower_CC14))
-#  Pre_Iflower_P2C19 = c(Pre_Iflower_P2C19 , 1-2*Rflower_PP19/(Rflower_CC19+Rflower_PP19))
-#  Pre_Iflower_C2P19 = c(Pre_Iflower_C2P19 , 1-2*Rflower_CC19/(Rflower_PP19+Rflower_CC19))
-#  Pre_Iflower_P2C24 = c(Pre_Iflower_P2C24 , 1-2*Rflower_PP24/(Rflower_CC24+Rflower_PP24))
-#  Pre_Iflower_C2P24 = c(Pre_Iflower_C2P24 , 1-2*Rflower_CC24/(Rflower_PP24+Rflower_CC24))
-#  Pos_Iflower_P2C9  = c(Pos_Iflower_P2C9  , 1-2*(((Rflower_CP9+Rflower_PC9)/2)/  (Rflower_CC9+((Rflower_CP9+Rflower_PC9)/2))))
-#  Pos_Iflower_C2P9  = c(Pos_Iflower_C2P9  , 1-2*(((Rflower_CP9+Rflower_PC9)/2)/  (Rflower_PP9+((Rflower_CP9+Rflower_PC9)/2))))
-#  Pos_Iflower_P2C14 = c(Pos_Iflower_P2C14 , 1-2*(((Rflower_CP14+Rflower_PC14)/2)/(Rflower_CC14+((Rflower_CP14+Rflower_PC14)/2))))
-#  Pos_Iflower_C2P14 = c(Pos_Iflower_C2P14 , 1-2*(((Rflower_CP14+Rflower_PC14)/2)/(Rflower_PP14+((Rflower_CP14+Rflower_PC14)/2))))
-#  Pos_Iflower_P2C19 = c(Pos_Iflower_P2C19 , 1-2*(((Rflower_CP19+Rflower_PC19)/2)/(Rflower_CC19+((Rflower_CP19+Rflower_PC19)/2))))
-#  Pos_Iflower_C2P19 = c(Pos_Iflower_C2P19 , 1-2*(((Rflower_CP19+Rflower_PC19)/2)/(Rflower_PP19+((Rflower_CP19+Rflower_PC19)/2))))
-#  Pos_Iflower_P2C24 = c(Pos_Iflower_P2C24 , 1-2*(((Rflower_CP24+Rflower_PC24)/2)/(Rflower_CC24+((Rflower_CP24+Rflower_PC24)/2))))
-#  Pos_Iflower_C2P24 = c(Pos_Iflower_C2P24 , 1-2*(((Rflower_CP24+Rflower_PC24)/2)/(Rflower_PP24+((Rflower_CP24+Rflower_PC24)/2))))                                                                                                                          
-#}
-#
 #####Flowering Time#####
 data <- data[data$Germination=="1",]
 data <- data[data$Survival=="1",]
